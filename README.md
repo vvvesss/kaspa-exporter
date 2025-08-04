@@ -118,9 +118,7 @@ The Grafana dashboard provides comprehensive monitoring of your Kaspa node:
 ![Kaspa Network Metrics](https://drive.google.com/uc?export=view&id=1BM9alBLjMUHsw207y4bV4auKBwQYSyRv)
 *Hashrate, difficulty, DAG tips, and mempool activity visualization*
 
-### Grafana Dashboard URL
-
-![Grafana Dashboard](https://grafana.com/grafana/dashboards/23835-kaspa-node-monitoring-dashboard/)
+### [Grafana Dashboard](https://grafana.com/grafana/dashboards/23835-kaspa-node-monitoring-dashboard/)
 
 ### Key Features Shown
 
