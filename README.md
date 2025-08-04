@@ -102,6 +102,28 @@ The dashboard includes:
 - **Performance** - Block timing and network activity
 - **System Info** - Version, connectivity, and configuration
 
+## 📊 Dashboard Screenshots
+
+The Grafana dashboard provides comprehensive monitoring of your Kaspa node:
+
+### Node Health & Performance
+
+![Kaspa Node Health](https://drive.google.com/uc?export=view&id=18Tf3Sx3ZGIY0AVgQjrjyT6oeh6E33Mf4)
+*Real-time node status, block information, and network connectivity*
+
+### Network Analytics & DAG Metrics  
+
+![Kaspa Network Metrics](https://drive.google.com/uc?export=view&id=1BM9alBLjMUHsw207y4bV4auKBwQYSyRv)
+*Hashrate, difficulty, DAG tips, and mempool activity visualization*
+
+### Key Features Shown
+
+- ✅ Node sync status and health indicators
+- 📈 Network hashrate and difficulty trends
+- ⏱️ Block timing and DAG structure metrics
+- 🌐 Peer connectivity and mempool activity
+- 📊 Historical data with customizable time ranges
+
 ## 🔧 Troubleshooting
 
 ### Exporter Issues
