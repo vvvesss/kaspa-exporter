@@ -1,0 +1,25 @@
+groups:
+- name: kaspa-rules
+  rules:
+  - alert: Kaspa LargeSyncDistance
+    expr: (time() - kaspa_latest_block_timestamp) > 3600
+    for: 10m
+    labels:
+      severity: critical
+      service: kaspa-node
+      alert_type: blockchain_health
+    annotations:
+      summary: "Kaspa node has not seen a new block for over 1 hour"
+      description: "The latest block timestamp is {{ $value | humanizeDuration }} old. Node: {{ $labels.instance }}, Job: {{ $labels.job }}"
+      runbook_url: "https://docs.kaspa.org/troubleshooting"
+      dashboard_url: "http://grafana:3000/d/kaspa-node-monitoring"
+  - alert: Kaspa NodeNotSynced
+    expr: kaspa_is_synced == 0
+    for: 10m
+    labels:
+      severity: critical
+      service: kaspa-node
+      alert_type: sync_status
+    annotations:
+      summary: "Kaspa node is not synchronized"
+      description: "Node {{ $labels.instance }} is not synced with the network for over 10 minutes"

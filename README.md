@@ -5,6 +5,7 @@ A reliable Prometheus exporter for Kaspa blockchain nodes with a comprehensive G
 ## 🚀 Features
 
 ### Prometheus Exporter
+
 - **Reliable Connection** - Custom WebSocket client with robust error handling
 - **Comprehensive Metrics** - 20+ blockchain and node health metrics
 - **Port Monitoring** - gRPC and JSON-RPC port accessibility checks
@@ -12,6 +13,7 @@ A reliable Prometheus exporter for Kaspa blockchain nodes with a comprehensive G
 - **Production Ready** - Systemd service configuration included
 
 ### Grafana Dashboard
+
 - **Real-time Monitoring** - Live blockchain metrics and health indicators
 - **Network Analytics** - Hashrate, difficulty, and DAG structure visualization
 - **Performance Tracking** - Block timing, mempool activity, and peer connections
@@ -124,9 +126,55 @@ The Grafana dashboard provides comprehensive monitoring of your Kaspa node:
 - 🌐 Peer connectivity and mempool activity
 - 📊 Historical data with customizable time ranges
 
+## 🚨 Prometheus Alerting Rules
+
+Pre-configured alerting rules are included to monitor critical Kaspa node health metrics. These rules help ensure your node stays healthy and synchronized with the network.
+
+### Alert Rules
+
+| Alert | Condition | Duration | Severity | Description |
+|-------|-----------|----------|----------|-------------|
+| **Kaspa LargeSyncDistance** | Block age > 1 hour | 10 minutes | Critical | Node hasn't seen a new block for over 1 hour |
+| **Kaspa NodeNotSynced** | `kaspa_is_synced == 0` | 10 minutes | Critical | Node is not synchronized with the network |
+
+### Setup
+
+1. **Copy the rules file:**
+
+   ```bash
+   sudo cp alerts/kaspa-rules.yml /etc/prometheus/rules/
+   ```
+
+2. **Update your `prometheus.yml`:**
+
+   ```yaml
+   rule_files:
+     - "rules/kaspa-rules.yml"
+   
+   alerting:
+     alertmanagers:
+       - static_configs:
+           - targets:
+             - alertmanager:9093
+   ```
+
+3. **Reload Prometheus:**
+
+   ```bash
+   sudo systemctl reload prometheus
+   ```
+
+### Alert Details
+
+- **LargeSyncDistance**: Triggers when your node falls behind the network by more than 1 hour, indicating potential connectivity or sync issues
+- **NodeNotSynced**: Fires when the node reports it's not synchronized, often due to network problems or node restart
+
+These alerts integrate with your existing Alertmanager setup and include links to troubleshooting documentation and the Grafana dashboard for quick diagnosis.
+
 ## 🔧 Troubleshooting
 
 ### Exporter Issues
+
 ```bash
 # Check service status
 systemctl status kaspa-exporter
@@ -149,14 +197,6 @@ curl http://localhost:9110/metrics
    - Ensure `KASPA_HOST` and `KASPA_JSON_RPC_PORT` are correct
    - Check firewall rules
    - Test connection: `telnet localhost 18110`
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test with your Kaspa node
-5. Submit a pull request
 
 ## 📝 License
 
