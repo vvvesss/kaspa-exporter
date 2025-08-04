@@ -1,8 +1,8 @@
 {
   "__inputs": [
     {
-      "name": "DS_PROMETHEUS-GCE",
-      "label": "Prometheus-GCE",
+      "name": "DS_PROMETHEUS",
+      "label": "Prometheus",
       "description": "",
       "type": "datasource",
       "pluginId": "prometheus",
@@ -88,7 +88,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS-GCE}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Current status and health metrics of the Kaspa node",
       "fieldConfig": {
@@ -185,7 +185,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_exporter_up{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Exporter",
@@ -194,7 +194,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_node_responsive{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Node",
@@ -203,7 +203,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_is_synced{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Synced",
@@ -216,7 +216,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS-GCE}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Current block information and DAG metrics",
       "fieldConfig": {
@@ -285,7 +285,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_latest_block_number{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Latest Block",
@@ -294,7 +294,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_tip_count{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "DAG Tips",
@@ -307,7 +307,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS-GCE}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Last block timestamp and time since last block",
       "fieldConfig": {
@@ -396,7 +396,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_latest_block_timestamp{job=\"$job\", instance=\"$instance\"} * 1000",
           "legendFormat": "Last Block Time",
@@ -405,7 +405,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_block_time_seconds{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Block Age",
@@ -431,7 +431,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS-GCE}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Network hashrate derived from difficulty - shows computational power securing the network",
       "fieldConfig": {
@@ -510,7 +510,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_network_hashrate{job=\"$job\", instance=\"$instance\"} / 1e12",
           "legendFormat": "Network Hashrate (TH/s)",
@@ -519,7 +519,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_difficulty{job=\"$job\", instance=\"$instance\"} / 1e12",
           "legendFormat": "Difficulty (T)",
@@ -532,7 +532,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS-GCE}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Virtual DAA Score progression - key Kaspa metric showing cumulative work",
       "fieldConfig": {
@@ -610,7 +610,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_virtual_daa_score{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Virtual DAA Score",
@@ -619,7 +619,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_latest_block_number{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Block Number",
@@ -632,7 +632,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS-GCE}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Time since last block was mined - should typically be around 1-2 seconds for healthy Kaspa network",
       "fieldConfig": {
@@ -719,7 +719,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_block_time_seconds{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Block Age (seconds)",
@@ -732,7 +732,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS-GCE}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "DAG tips count - multiple tips indicate healthy parallel block creation in Kaspa's DAG structure",
       "fieldConfig": {
@@ -811,7 +811,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_tip_count{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "DAG Tips",
@@ -837,7 +837,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS-GCE}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Mempool activity showing pending transactions and mempool size",
       "fieldConfig": {
@@ -916,7 +916,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_mempool_transactions{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Pending Transactions",
@@ -925,7 +925,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_mempool_size{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Mempool Size",
@@ -938,7 +938,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS-GCE}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Network connectivity showing peer connections over time",
       "fieldConfig": {
@@ -1025,7 +1025,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_peer_count{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Total Peers",
@@ -1034,7 +1034,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_connected_peer_count{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Connected Peers",
@@ -1060,7 +1060,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS-GCE}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Node configuration and feature availability",
       "fieldConfig": {
@@ -1157,7 +1157,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_utxo_index_enabled{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "UTXO Index",
@@ -1166,7 +1166,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_notify_enabled{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Notifications",
@@ -1175,7 +1175,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_network_mainnet{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Network",
@@ -1188,7 +1188,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS-GCE}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Port accessibility and connection status",
       "fieldConfig": {
@@ -1256,7 +1256,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_grpc_port_accessible{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "gRPC Port",
@@ -1265,7 +1265,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_json_rpc_port_accessible{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "JSON-RPC Port",
@@ -1278,7 +1278,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS-GCE}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Server version information",
       "fieldConfig": {
@@ -1330,7 +1330,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_server_version_major{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Major",
@@ -1339,7 +1339,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_server_version_minor{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Minor",
@@ -1348,7 +1348,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_server_version_patch{job=\"$job\", instance=\"$instance\"}",
           "legendFormat": "Patch",
@@ -1361,7 +1361,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS-GCE}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "System timestamps for monitoring exporter health",
       "fieldConfig": {
@@ -1413,7 +1413,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_node_current_timestamp{job=\"$job\", instance=\"$instance\"} * 1000",
           "legendFormat": "Node Time",
@@ -1422,7 +1422,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_exporter_last_scrape_timestamp{job=\"$job\", instance=\"$instance\"} * 1000",
           "legendFormat": "Last Scrape",
@@ -1435,7 +1435,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS-GCE}"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "Quick overview table of all key Kaspa metrics",
       "fieldConfig": {
@@ -1518,7 +1518,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_latest_block_number{job=\"$job\", instance=\"$instance\"}",
           "format": "table",
@@ -1528,7 +1528,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_virtual_daa_score{job=\"$job\", instance=\"$instance\"}",
           "format": "table",
@@ -1538,7 +1538,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS-GCE}"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "kaspa_network_hashrate{job=\"$job\", instance=\"$instance\"} / 1e12",
           "format": "table",
@@ -1586,8 +1586,8 @@
       {
         "current": {
           "selected": true,
-          "text": "Prometheus-GCE",
-          "value": "Prometheus-GCE"
+          "text": "Prometheus",
+          "value": "Prometheus"
         },
         "hide": 0,
         "includeAll": false,
@@ -1606,7 +1606,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS-GCE}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(kaspa_exporter_up, job)",
         "hide": 0,
@@ -1629,7 +1629,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS-GCE}"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(kaspa_exporter_up{job=\"$job\"}, instance)",
         "hide": 0,
